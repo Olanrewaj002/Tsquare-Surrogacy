@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css" />
+    <title>Document</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!--Nav bar-->
+<header
+  x-data="{ open:false }"
+  :class="open ? 'fixed top-0 left-0 w-full bg-white z-50' : 'relative'"
+  class="shadow-xs">
+  <div x-effect="document.body.style.overflow = open ? 'hidden' : ''"></div>
+
+
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="flex flex-row items-center">
+                <img src="images/logo.jpeg" class="w-16">
+                <h4 class="font-semibold font-mono text-xs text-gray-400">
+                    Tsquare Surrogacy<br>Consultancy
+                </h4>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-12 items-center">
+                <a href="index.html" class="hover:text-pink-400 text-sm font-thin">Home</a>
+                <a href="about.html" class="hover:text-pink-400 text-sm font-thin">About Us</a>
+                <a href="donor.html" class="text-sm font-bold">Donor Program</a>
+                <a href="contact.html" class="text-sm font-thin hover:text-pink-400">Contact Us</a>
+
+                <div class="flex flex-row items-center">
+                    <img class="w-4" src="images/phone.svg">
+                    <p class="text-pink-400 text-sm font-thin">
+                        +234 802 431 0390
+                    </p>
+                </div>
+            </nav>
+
+            <!-- Hamburger -->
+            <button
+                @click="open = !open"
+                class="md:hidden p-2 rounded-md text-gray-700 focus:outline-none z-50 relative"
+            >
+
+                <svg x-show="!open" x-cloak class="h-8 w-8"
+                    fill="none" viewBox="0 0 24 24" stroke="black">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+                <svg x-show="open" x-cloak class="h-8 w-8"
+                    fill="none" viewBox="0 0 24 24" stroke="black">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay 
+    <div
+        x-show="open"
+        x-transition.opacity
+        @click="open = false"
+        class="inset-0 backdrop-blur-2xl z-10 md:hidden fixed"
+        x-cloak
+    ></div> 
+    -->
+
+    <!--Mobile Menu -->
+    <div
+        x-show="open"
+        x-transition
+        x-cloak
+        class="fixed top-0 left-0 w-full z-10 mt-24 md:hidden bg-white backdrop-blur-lg shadow-lg px-6 pt-4 pb-6 space-y-4"
+    >
+
+        <!--Buttons-->
+        <nav class="flex flex-col mt-10 space-y-6 justify-center items-center">
+            <a href="index.html" @click="open=false" class="text-sm font-thin">Home</a>
+            <a href="about.html" @click="open=false" class="text-sm font-thin">About Us</a>
+            <a href="donor.html" @click="open=false" class="text-sm font-thin">Donor Program</a>
+            <a href="contact.html" @click="open=false"
+               class="px-4 py-2 text-sm rounded-md font-thin">
+               Contact Us
+            </a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center space-x-8 text-3xl mt-6">
+
+        <a href="https://facebook.com"
+            target="_blank"
+            class="text-black hover:text-blue-600 bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://instagram.com"
+            target="_blank"
+            class="text-black hover:text-pink-500 bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://tiktok.com"
+            target="_blank"
+            class="text-black hover:text-black bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        </div>
+
+
+    </div>
+</header>
+<!--Nav bar end-->
+
+
+    <section class="bg-white overflow-hidden">
+
+  <!-- HERO -->
+  <div class="relative">
+    <!-- Background Image -->
+    <img
+      src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="Donor Program Hero"
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/45"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 py-28 md:py-36 text-center text-white">
+      <h1 class="text-4xl text-pink-400 md:text-6xl font-bold tracking-tight">
+        Donor Programs
+      </h1>
+      <p class="mt-5 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Our donor programs are designed to provide safe, ethical, and supportive
+        pathways for intended parents seeking egg, sperm, or embryo donation.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRAM INTRO -->
+  <div class="max-w-6xl mx-auto px-4 -mt-10 relative z-10">
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl">
+      <h2 class="text-2xl md:text-3xl font-semibold text-pink-400 mb-4">
+        Why Choose Our Donor Program?
+      </h2>
+      <p class="text-gray-500 font-thin text-lg">
+        We carefully screen donors and guide intended parents through every step
+        of the journey, ensuring transparency, confidentiality, and medical
+        excellence throughout the process.
+      </p>
+    </div>
+  </div>
+
+  <!-- DONOR TYPES -->
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Egg Donor -->
+      <div class="group rounded-2xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-pink-400 mb-3">Egg Donor Program</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Access thoroughly screened egg donors with detailed medical and genetic
+          profiles to increase your chances of successful conception.
+        </p>
+      </div>
+
+      <!-- Sperm Donor -->
+      <div class="group rounded-2xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-pink-400 mb-3">Sperm Donor Program</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Choose from qualified sperm donors based on health, background, and
+          compatibility to match your family-building goals.
+        </p>
+      </div>
+
+      <!-- Embryo Donor -->
+      <div class="group rounded-2xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <h3 class="text-xl font-semibold text-pink-400 mb-3">Embryo Donation</h3>
+        <p class="text-gray-600 leading-relaxed">
+          A compassionate option allowing intended parents to use donated embryos
+          to begin their parenthood journey with expert guidance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="bg-gradient-to-b from-gray-50 to-white py-20">
+    <div class="max-w-6xl mx-auto px-4">
+
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+        Our Process
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-pink-400 mb-2">1. Consultation</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Meet with our team to understand your needs and eligibility.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-pink-400 mb-2">2. Matching</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Carefully select a donor based on medical, genetic, and personal preferences.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-pink-400 mb-2">3. Medical Preparation</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Coordinated medical procedures handled by fertility specialists.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+          <h4 class="font-semibold text-pink-400 mb-2">4. Treatment & Support</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Ongoing support and guidance throughout your fertility journey.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Cta section start-->
+
+    <section class="max-w-7xl mx-auto px-4 mb-16 lg:mb-40 lg:mt-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- CTA: Intended Parents -->
+        <div class="relative rounded-3xl overflow-hidden bg-gray-50 p-8 sm:p-10 flex flex-col justify-between">
+        <div>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+            For Intended Parents
+            </h3>
+            <p class="mt-4 text-gray-400 leading-relaxed max-w-md">
+            Begin your journey to parenthood with trusted guidance, ethical care,
+            and a dedicated team that supports you at every step.
+            </p>
+        </div>
+
+        <div class="mt-8">
+            <a
+            href="contact.html"
+            class="inline-flex items-center justify-center rounded-full bg-purple-500 text-white px-6 py-3 text-sm sm:text-base font-medium hover:bg-purple-300 transition"
+            >
+            Start Your Journey
+            </a>
+        </div>
+        </div>
+
+        <!-- CTA: Donors & Surrogates -->
+        <div class="relative rounded-3xl overflow-hidden bg-white border border-gray-100 p-8 sm:p-10 flex flex-col justify-between">
+        <div>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+            For Donors & Surrogate Mothers
+            </h3>
+            <p class="mt-4 text-gray-400 leading-relaxed max-w-md">
+            Make a life-changing impact by helping families grow.
+            Join our carefully supported and ethically guided donor
+            and surrogacy programs.
+            </p>
+        </div>
+
+        <div class="mt-8">
+            <a
+            href="contact.html"
+            class="inline-flex items-center justify-center rounded-full border border-purple-500 text-gray-900 px-6 py-3 text-sm sm:text-base font-medium hover:bg-gray-900 hover:text-white transition"
+            >
+            Become a Donor or Surrogate
+            </a>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+
+<!--footer start-->
+   <section id="footer" class="py-10 max-w-7xl mx-auto border-t border-gray-200">
+    <div class="grid grid-flow-row lg:flex justify-between px-4 mb-8 gap-10">
+      <!-- Company Logo -->
+      <div class="grid grid-flow-row gap-6">
+            <div class="flex flex-row items-center">
+                <img src="images/logo.jpeg" class="w-16">
+                <h4 class="font-semibold font-mono text-xs text-gray-400">
+                    Tsquare Surrogacy<br>Consultancy
+                </h4>
+            </div>
+      </div>
+  
+      <!-- Links Column 1 -->
+      <div>
+        <div class="grid grid-flow-row gap-2 mb-6">
+          <h2 class="text-xl font-semibold opacity-80">
+            Company
+          </h2>
+        </div>
+        <div class="grid grid-flow-row gap-4">
+          <a href="index.html" class="hover:underline text-sm font-thin">Home</a>
+          <a href="about.html" class="hover:underline  text-sm font-thin">About Us</a>
+          <a href="donor.html" class="hover:underline  text-sm font-thin">Donor Program</a>
+        </div>
+      </div>
+  
+      <!-- Links Column 2 -->
+      <div id="contact" class="grid grid-flow-row mb-6 gap-4 ">
+        <div>
+          <h2 class="text-xl font-semibold opacity-80 ">
+            Contact us
+          </h2>
+        </div>
+
+        <div class="flex flex-row gap-4">
+          <img src="images/mail.svg" class="w-4 h-4 opacity-60">
+          <h3 class="hover:underline text-sm font-thin">
+            hello@tsquaresurrogacy.com
+          </h3>
+        </div>
+        <div class="flex flex-row gap-2">
+          <img src="images/phone.svg" class="w-4 h-4 opacity-60">
+          <h3 class="hover:underline text-sm font-thin">
+            +234 802 431 0390
+          </h3>
+        </div>
+      </div>
+       <div class="flex justify-center space-x-8 text-gray-600 text-3xl mt-6">
+            <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-blue-400"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-blue-700"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+  </section>
+  <!--footer copyright-->
+  <div class="p-6 bg-purple-200">
+    <h4 class="text-sm">
+      copyright 2026 <strong class="text-yellow-500">Tsquare Surrogacy Consultancy</strong>.
+    </h4>
+  </div>
+
+<!-- Alpine JS (required for toggle) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+  // Wait until DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all FAQ items
+    const faqs = document.querySelectorAll('[id^="faq-style"]');
+
+    faqs.forEach(faq => {
+      faq.addEventListener('click', function() {
+        // Find the dropdown div inside the clicked FAQ
+        const dropdown = faq.querySelector('[id^="drop-down"]');
+
+        // Toggle hidden class
+        if (dropdown.classList.contains('hidden')) {
+          dropdown.classList.remove('hidden');
+        } else {
+          dropdown.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

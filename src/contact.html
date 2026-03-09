@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css" />
+    <title>Document</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!--Nav bar-->
+<header
+  x-data="{ open:false }"
+  :class="open ? 'fixed top-0 left-0 w-full bg-white z-50' : 'relative'"
+  class="shadow-xs">
+  <div x-effect="document.body.style.overflow = open ? 'hidden' : ''"></div>
+
+
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="flex flex-row items-center">
+                <img src="images/logo.jpeg" class="w-16">
+                <h4 class="font-semibold font-mono text-xs text-gray-400">
+                    Tsquare Surrogacy<br>Consultancy
+                </h4>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-12 items-center">
+                <a href="index.html" class="hover:text-pink-400 text-sm font-thin">Home</a>
+                <a href="about.html" class="text-sm hover:text-pink-400 font-thin">About Us</a>
+                <a href="donor.html" class="hover:text-pink-400 text-sm font-thin">Donor Program</a>
+                <a href="contact.html" class="text-sm font-bold">Contact Us</a>
+
+                <div class="flex flex-row items-center">
+                    <img class="w-4" src="images/phone.svg">
+                    <p class="text-pink-400 text-sm font-thin">
+                        +234 802 431 0390
+                    </p>
+                </div>
+            </nav>
+
+            <!-- Hamburger -->
+            <button
+                @click="open = !open"
+                class="md:hidden p-2 rounded-md text-gray-700 focus:outline-none z-50 relative"
+            >
+
+                <svg x-show="!open" x-cloak class="h-8 w-8"
+                    fill="none" viewBox="0 0 24 24" stroke="black">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+                <svg x-show="open" x-cloak class="h-8 w-8"
+                    fill="none" viewBox="0 0 24 24" stroke="black">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay 
+    <div
+        x-show="open"
+        x-transition.opacity
+        @click="open = false"
+        class="inset-0 backdrop-blur-2xl z-10 md:hidden fixed"
+        x-cloak
+    ></div> 
+    -->
+
+    <!--Mobile Menu -->
+    <div
+        x-show="open"
+        x-transition
+        x-cloak
+        class="fixed top-0 left-0 w-full z-10 mt-24 md:hidden bg-white backdrop-blur-lg shadow-lg px-6 pt-4 pb-6 space-y-4"
+    >
+
+        <!--Buttons-->
+        <nav class="flex flex-col mt-10 space-y-6 justify-center items-center">
+            <a href="index.html" @click="open=false" class="text-sm font-thin">Home</a>
+            <a href="about.html" @click="open=false" class="text-sm font-thin">About Us</a>
+            <a href="donor.html" @click="open=false" class="text-sm font-thin">Donor Program</a>
+            <a href="contact.html" @click="open=false"
+               class="px-4 py-2 text-sm rounded-md font-thin">
+               Contact Us
+            </a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center space-x-8 text-3xl mt-6">
+
+        <a href="https://facebook.com"
+            target="_blank"
+            class="text-black hover:text-blue-600 bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://instagram.com"
+            target="_blank"
+            class="text-black hover:text-pink-500 bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://tiktok.com"
+            target="_blank"
+            class="text-black hover:text-black bg-white/40 p-2 rounded-sm">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        </div>
+
+
+    </div>
+</header>
+<!--Nav bar end-->
+
+<!-- HERO SECTION -->
+<section class="relative bg-gray-900 text-white">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-pink-300/40"></div>
+  <div class="relative max-w-7xl mx-auto px-6 py-24 lg:py-32 text-center">
+    <h1 class="text-4xl text-pink-500 md:text-5xl font-bold mb-6 leading-tight">
+      We are open for enquiries and consultation.
+    </h1>
+    <p class="max-w-2xl mx-auto text-lg text-gray-300">
+      Our listening ears are always ready to hear you and our guidance available to lead you to positive results.
+    </p>
+  </div>
+</section>
+
+<!-- MODERN CONTACT SECTION -->
+<section class="relative py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+      <!-- LEFT SIDE (Intro Text) -->
+      <div class="max-w-xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-600 mb-6">
+          Contact Information
+        </h2>
+
+        <p class="text-lg text-gray-500 leading-relaxed mb-10">
+          Reach out to an organisation that delivers cutting edge services and guarantees total care and excellence.
+        </p>
+
+        <!-- Contact Cards -->
+        <div class="space-y-6">
+
+          <!-- Email -->
+          <div class="group flex items-start gap-5 p-6 rounded-2xl bg-white border border-gray-100 shadow-xs hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-black to-pink-500 text-white shadow-md group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" 
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 8l9 6 9-6M21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-pink-400">Email Address</h3>
+              <a href="mailto:hello@youragency.com"
+                 class="text-gray-500 hover:text-black transition">
+                hello@tsquaresurrogacy.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="group flex items-start gap-5 p-6 rounded-2xl bg-white border border-gray-100 shadow-xs hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-black to-pink-500 text-white shadow-md group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 5a2 2 0 012-2h2l2 5-3 2a11 11 0 005 5l2-3 5 2v2a2 2 0 01-2 2h-1C8 19 3 14 3 7V5z" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-pink-400">Phone Number</h3>
+              <a href="tel:+2348000000000"
+                 class="text-gray-500 hover:text-black transition">
+                +234 802 431 0390
+              </a>
+            </div>
+          </div>
+
+          <!-- Office -->
+          <div class="group flex items-start gap-5 p-6 rounded-2xl bg-white border border-gray-100 shadow-xs hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-black to-pink-500 text-white shadow-md group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 11c1.656 0 3-1.567 3-3.5S13.656 4 12 4 9 5.567 9 7.5 10.344 11 12 11z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 22s7-6.686 7-12.5S15.866 2 12 2 5 5.186 5 9.5 12 22 12 22z" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-pink-400">Office Address</h3>
+              <p class="text-gray-500 leading-relaxed">
+                Babatunde Atere street, Omole estate,<br/>
+                Lagos, Nigeria
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE (Optional Modern Visual Card) -->
+      <div class="hidden lg:block">
+        <div class="relative h-full min-h-[400px] rounded-3xl bg-gradient-to-br from-black via-gray-900 to-gray-700 p-10 text-white flex flex-col justify-between shadow-2xl">
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Let’s start a conversation
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Whether you're launching a product, scaling operations,
+              or rethinking your brand — we’re ready to collaborate.
+            </p>
+          </div>
+
+          <div class="mt-10">
+            <p class="text-sm text-gray-400">Business Hours</p>
+            <p class="text-lg font-medium">Mon – Fri / 9:00 AM – 6:00 PM</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!--footer start-->
+   <section id="footer" class="py-10 max-w-7xl mx-auto border-t border-gray-200">
+    <div class="grid grid-flow-row lg:flex justify-between px-4 mb-8 gap-10">
+      <!-- Company Logo -->
+      <div class="grid grid-flow-row gap-6">
+            <div class="flex flex-row items-center">
+                <img src="images/logo.jpeg" class="w-16">
+                <h4 class="font-semibold font-mono text-xs text-gray-400">
+                    Tsquare Surrogacy<br>Consultancy
+                </h4>
+            </div>
+      </div>
+  
+      <!-- Links Column 1 -->
+      <div>
+        <div class="grid grid-flow-row gap-2 mb-6">
+          <h2 class="text-xl font-semibold opacity-80">
+            Company
+          </h2>
+        </div>
+        <div class="grid grid-flow-row gap-4">
+          <a href="index.html" class="hover:underline text-sm font-thin">Home</a>
+          <a href="about.html" class="hover:underline  text-sm font-thin">About Us</a>
+          <a href="donor.html" class="hover:underline  text-sm font-thin">Donor Program</a>
+        </div>
+      </div>
+  
+      <!-- Links Column 2 -->
+      <div id="contact" class="grid grid-flow-row mb-6 gap-4 ">
+        <div>
+          <h2 class="text-xl font-semibold opacity-80 ">
+            Contact us
+          </h2>
+        </div>
+
+        <div class="flex flex-row gap-4">
+          <img src="images/mail.svg" class="w-4 h-4 opacity-60">
+          <h3 class="hover:underline text-sm font-thin">
+            hello@tsquaresurrogacy.com
+          </h3>
+        </div>
+        <div class="flex flex-row gap-2">
+          <img src="images/phone.svg" class="w-4 h-4 opacity-60">
+          <h3 class="hover:underline text-sm font-thin">
+            +234 802 431 0390
+          </h3>
+        </div>
+      </div>
+       <div class="flex justify-center space-x-8 text-gray-600 text-3xl mt-6">
+            <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-blue-400"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-blue-700"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+  </section>
+  <!--footer copyright-->
+  <div class="p-6 bg-purple-200">
+    <h4 class="text-sm">
+      copyright 2026 <strong class="text-yellow-500">Tsquare Surrogacy Consultancy</strong>.
+    </h4>
+  </div>
+
+
+<!-- Alpine JS (required for toggle) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+  // Wait until DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all FAQ items
+    const faqs = document.querySelectorAll('[id^="faq-style"]');
+
+    faqs.forEach(faq => {
+      faq.addEventListener('click', function() {
+        // Find the dropdown div inside the clicked FAQ
+        const dropdown = faq.querySelector('[id^="drop-down"]');
+
+        // Toggle hidden class
+        if (dropdown.classList.contains('hidden')) {
+          dropdown.classList.remove('hidden');
+        } else {
+          dropdown.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
+</body>
